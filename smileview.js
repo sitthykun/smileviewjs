@@ -72,8 +72,7 @@ class SmileViewer {
 
     _buttonClose(buttonClose) {
         buttonClose.addEventListener('click', (event) => {
-            // delete this._mainContainer
-            console.log('close ' + this._mainIndex)
+            document.getElementById(this._appendIndex(ElementId.WINDOW_MAIN)).remove()
         })
     }
 
@@ -88,6 +87,7 @@ class SmileViewer {
                 buttonMinimize.innerHTML    = showIcon
             }
 
+            // update
             document.getElementById(this._appendIndex(ElementId.WINDOW_CONTENT)).hidden = !document.getElementById(this._appendIndex(ElementId.WINDOW_CONTENT)).hidden
         })
     }
