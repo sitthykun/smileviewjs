@@ -42,6 +42,8 @@ class SmileViewer {
 
         // data
         this._exportValue       = ''
+        this._trimLineTop       = arg.trimTop ?? 0
+        this._trimLineBottom    = arg.tripBottom ?? 0
 
         // label
         this._context           = ''
@@ -94,14 +96,12 @@ class SmileViewer {
 
     _createTop() {
         let conTop          = document.createElement('div')
-        , boxColorStatusType= document.createElement('div')
         , buttonClose       = document.createElement('div')
         , buttonMinimize    = document.createElement('div')
         , lableWinIndex     = document.createElement('div')
         , lableTitle        = document.createElement('div')
         // container
         conTop.setAttribute('class', 'con-top')
-        boxColorStatusType.setAttribute('class', 'lead-color')
         buttonClose.setAttribute('class', 'button-close button')
         buttonMinimize.setAttribute('class', 'button-minimize button')
         lableWinIndex.setAttribute('class', 'win-index')
@@ -111,7 +111,7 @@ class SmileViewer {
         lableTitle.setAttribute('id', this._appendIndex(ElementId.WINDOW_TITLE))
 
         // modify content
-        boxColorStatusType.style.backgroundColor    = this._getBoxTypeByNumeric(this._windowType)
+        buttonMinimize.style.backgroundColor    = this._getBoxTypeByNumeric(this._windowType)
         buttonClose.innerHTML       = '<span>X</span>'
         buttonMinimize.innerHTML    = '<span>_</span>'
         lableTitle.innerHTML        = `<span>${this._windowTitle}</span>`
@@ -123,7 +123,6 @@ class SmileViewer {
         // add to container
         conTop.style.width   = this._sizeWidth
         conTop.appendChild(buttonMinimize)
-        conTop.appendChild(boxColorStatusType)
         conTop.appendChild(lableTitle)
         conTop.appendChild(buttonClose)
         conTop.appendChild(lableWinIndex)
