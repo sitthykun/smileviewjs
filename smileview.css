@@ -1,0 +1,113 @@
+/**
+ * 
+ *
+ */
+.smileview-container {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* theme default */
+.theme-default {
+    background-color: #1c1919;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+.theme-default .view-container {
+    float: left;
+    height: 300px;
+    width: 500px;
+}
+
+.view-container .button {
+    cursor: pointer;
+    color: #fff;
+    font-family: 'Arial', 'Helvetica', 'sans-serif' ;
+    font-weight: 300;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.view-container .button:hover {
+    filter: brightness(150%);
+}
+
+.view-container .button span {
+    display: table;
+    margin: 5px auto;
+    font-family: 'Arial', 'Helvetica', 'sans-serif' ;
+    font-size: 20px;
+}
+
+/* top container */
+.view-container .con-top {
+    background-color: #3c3131;
+    float: left;
+    height: 30px;
+    width: 100vh;
+}
+
+.view-container .con-top .title {
+    /* background-color: #262020; */
+    color: #bfb8b8;
+    float: left;
+    height: 30px;
+    width: 80vh;
+}
+
+.view-container .con-top .title span {
+    /* background-color: #262020; */
+    display: table;
+    font-family: 'Arial', 'Helvetica', 'sans-serif' ;
+    margin: 5px auto auto 10px;
+}
+
+.view-container .con-top .win-index {
+    float: right;
+    height: 30px;
+    width: 30px;
+}
+
+.view-container .con-top .button-close {
+    background-color: #f05959;
+    float: right;
+    height: 30px;
+    width: 30px;
+}
+
+.view-container .con-top .button-minimize {
+    background-color: #261f1f;
+    float: left;
+    height: 30px;
+    width: 30px;
+}
+
+.view-container .con-top .lead-color {
+    float: left;
+    height: 30px;
+    width: 15px;
+}
+
+.view-container .con-top .button-minimize {
+    float: left;
+    height: 30px;
+    width: 30px;
+}
+
+/* middle container */
+.view-container .con-mid {
+    background-color: #262020;
+    color: #e4e4e4;
+    float: left;
+    height: 200px;
+    width: 100vh;
+}
+
+.view-container .con-mid span {
+    font-family: 'Arial', 'Helvetica', 'sans-serif' ;
+    font-size: 14px;
+    margin: 10px 10px;
+}
