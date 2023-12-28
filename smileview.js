@@ -30,7 +30,14 @@ const BoxColorType  = {
 }
 
 
+/**
+ * 
+ */
 class SmileViewer {
+    /**
+     * 
+     * @param {*} arg 
+     */
     constructor(arg) {
         // private
         // main
@@ -68,16 +75,31 @@ class SmileViewer {
         this._init()
     }
 
+    /**
+     * 
+     * @param {*} value 
+     * @returns 
+     */
     _appendIndex(value) {
         return this._mainIndex + '_' + value
     }
 
+    /**
+     * 
+     * @param {*} buttonClose 
+     */
     _buttonClose(buttonClose) {
         buttonClose.addEventListener('click', (event) => {
             document.getElementById(this._appendIndex(ElementId.WINDOW_MAIN)).remove()
         })
     }
 
+    /**
+     * 
+     * @param {*} buttonMinimize 
+     * @param {*} showIcon 
+     * @param {*} hideIcone 
+     */
     _buttonMinimize(buttonMinimize, showIcon, hideIcone) {
         buttonMinimize.addEventListener('click', (event) => {
             if (document.getElementById(this._appendIndex(ElementId.WINDOW_CONTENT)).hidden) {
@@ -94,6 +116,27 @@ class SmileViewer {
         })
     }
 
+    /**
+     * 
+     * @returns 
+     */
+    _createMiddle() {
+        let conMiddle   = document.createElement('div')
+        conMiddle.setAttribute('class', 'con-mid')
+        conMiddle.setAttribute('id', this._appendIndex(ElementId.WINDOW_CONTENT))
+        conMiddle.style.height  = this._sizeHeight
+        conMiddle.style.width   = this._sizeWidth
+        // data
+        conMiddle.innerHTML     = `<span>${this._context}</span>`
+        
+        //
+        return conMiddle
+    }
+
+    /**
+     * 
+     * @returns 
+     */
     _createTop() {
         let conTop          = document.createElement('div')
         , buttonClose       = document.createElement('div')
@@ -131,19 +174,11 @@ class SmileViewer {
         return conTop
     }
 
-    _createMiddle() {
-        let conMiddle   = document.createElement('div')
-        conMiddle.setAttribute('class', 'con-mid')
-        conMiddle.setAttribute('id', this._appendIndex(ElementId.WINDOW_CONTENT))
-        conMiddle.style.height  = this._sizeHeight
-        conMiddle.style.width   = this._sizeWidth
-        // data
-        conMiddle.innerHTML     = `<span>${this._context}</span>`
-        
-        //
-        return conMiddle
-    }
-
+    /**
+     * 
+     * @param {*} num 
+     * @returns 
+     */
     _getBoxTypeByNumeric(num) {
         switch (num) {
             case 1:
@@ -162,10 +197,16 @@ class SmileViewer {
         }
     }
 
+    /**
+     * 
+     */
     _init() {
         // 
     }
 
+    /**
+     * 
+     */
     _render() {
         // reset or reload theme
         // container 
@@ -187,41 +228,80 @@ class SmileViewer {
         container.appendChild(this._mainContainer)
     }
 
+    /**
+     * 
+     * @param {*} value 
+     */
     setContent(value) {
         this._context       = value 
     }
 
+    /**
+     * 
+     * @param {*} value 
+     */
     setTheme(value) {
         this._mainTheme     = theme
         this._render()
     } 
 
+    /**
+     * 
+     * @param {*} value 
+     */
     setSizeHeight(value) {
         this._sizeHeight    = value
     }
 
+    /**
+     * 
+     * @param {*} value 
+     */
     setSizeWidth(value) {
         this._sizeWidth     = value
     }
 
+    /**
+     * 
+     * @param {*} value 
+     */
     setWindowIndex(value) {
         this._windowIndex   = value
     }
 
+    /**
+     * 
+     * @param {*} mode 
+     */
     setWindowMinimize(mode) {
         // mode is bool
         this._windowMinimize= int(mode)
     }
 
+    /**
+     * 
+     * @param {*} width 
+     * @param {*} height 
+     */
     setWindowSize(width, height) {
         this._sizeHeight     = height
         this._sizeWidth      = width
     }
 
+    /**
+     * 
+     * @param {*} title 
+     */
     setWindowTitle(title) {
         this._windowTitle    = title
     }
 
+    /**
+     * 
+     * @param {*} title 
+     * @param {*} content 
+     * @param {*} color 
+     */
     show(title, content, color) {
         this._context       = content
         this._windowTitle   = title
